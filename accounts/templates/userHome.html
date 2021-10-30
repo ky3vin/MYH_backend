@@ -1,0 +1,8 @@
+<h1>Welcome to User's Home!</h1>
+
+<form method="POST" action="{% url 'home'%}">
+    {% csrf_token %}
+    <input class="btn btn-primary" type="submit" value="홈으로">
+</form>
+
+<a href="{% url 'member_modify' %}">회원수정</a>

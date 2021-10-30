@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block title %}
+{% endblock %}
+
+{% block content %}
+
+<div class='container'>
+    <div class="row">
+        <div class="col"></div>
+        <div class="col-5">
+            {% for object in object_list %}
+
+            <div class="card">
+                <div class="card-header">
+                    <a href="{% url 'posting:detail' object.id %}" class="card-link">{{ object.club_name }}</a>
+                </div>
+                <img src=" {{ object.image.url }}" class="card-img-top" alt="...">
+
+            </div>
+            {% endfor %}
+
+        </div>
+    </div>
+</div>
+{% endblock %}

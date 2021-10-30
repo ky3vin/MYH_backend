@@ -1,0 +1,15 @@
+<h3>아이디를 잊어버리셨나요?</h3>
+
+<p>아래에 귀하의 이메일 주소를 입력하시면, ID를 보내드리겠습니다.</p>
+
+<form method="post">
+
+    {%csrf_token %}
+    Email: <input type="email" name="email">
+    <input type = "Submit" name="email_submit">
+
+    {% for message in messages %}
+            {{message}}
+    {% endfor %}
+
+</form>

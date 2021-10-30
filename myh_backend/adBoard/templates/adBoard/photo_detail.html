@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% block title %}
+{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col"></div>
+    <div class="col-12 col-xl-4 col-md-4">
+        <div class="card-header">
+            <h1>{{ object.club_name }}</h1>
+            {% if object.keep_going == True %}
+                <h3>상시모집</h3>
+            {% else %}
+                <h3>모집기간 : {{ object.due_date }}</h3>
+            {% endif %}
+                <h3>{{ object.category }}</h3>
+
+        </div>
+        <div class="card" style="">
+            <img src=" {{ object.image.url }}" class="card-img-top" alt="...">
+            <div class="card-body">
+                <p class="card-text"> {{ object.text }} </p>
+            </div>
+            <div class="card-body">
+                {% if user == object.author %}
+                <a href="{% url 'photo:update' object.id %}" class="card-link">수정하기</a>
+                <a href="{% url 'photo:delete' object.id %}" class="card-link">삭제하기</a>
+                {% else %}
+                <a href="{% url 'photo:apply' object.id %}" class="card-link">지원하기</a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+    <div class="col"></div>
+</div>
+{% endblock %}

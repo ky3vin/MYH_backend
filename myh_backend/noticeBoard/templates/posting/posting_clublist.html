@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block title %}
+{% endblock %}
+
+{% block content %}
+
+<div class='container'>
+    <div class="row">
+        <div class="col"></div>
+        <div class="col-5">
+            {% for object in object_list %}
+            {% if is_member %}
+            <div class="text-center">
+              <a href="/club/<int:pk>/">{{ object.club_name }}</a>
+            </div>
+            {% endif %
+            {% endfor %}
+
+        </div>
+    </div>
+</div>
+{% endblock %}

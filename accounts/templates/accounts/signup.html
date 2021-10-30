@@ -1,0 +1,47 @@
+
+{% block content %}
+
+<h1>Sign Up!</h1>
+
+<form method="POST" action="{% url 'signup'%}">
+    {% csrf_token %}
+
+    Student_ID:
+    <br>
+    <input name="student_ID" type="text" value="">
+    <br>
+    Email:
+    <br>
+    <input name="email" type="email" value="">
+    <br>
+    Password:
+    <br>
+    <input name="password1" type="password" value="">
+    <br>
+    Confirm Password:
+    <br>
+    <input name="password2" type="password" value="">
+    <br>
+    Phone Number:
+    <br>
+    <input name="phone_number" type="text" value="">
+    <br>
+    Major:
+    <br>
+    <input name="major" type="text" value="">
+    <br>
+
+    회원가입 후 작성하신 이메일로 인증메일이 전송됩니다.
+    인증메일에 온 링크를 클릭해 계정을 활성화하세요.
+    <br>
+    <input class="btn btn-primary" type="submit" value="가입하기">
+
+</form>
+
+<form method="POST" action="{% url 'home'%}">
+    {% csrf_token %}
+    <input class="btn btn-primary" type="submit" value="홈으로">
+</form>
+
+{% endblock %}
+

@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block title %}
+{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col"></div>
+    <div class="col-12 col-xl-4 col-md-4">
+        <div class="card-header">
+            <h1>{{ object.applicant }}</h1>
+        </div>
+        <div class="card" style="">
+            <div class="card-body">
+                <p class="card-text"> {{ object.apply_text }} </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="col"></div>
+</div>
+{% endblock %}

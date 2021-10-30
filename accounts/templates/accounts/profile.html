@@ -1,0 +1,24 @@
+{% block content %}
+
+    <div>
+        <div>
+            {% if user.avatar %}
+            <div style="background-image: url({{user.avatar.url}});">
+            {% else %}
+            <div>
+                <span>{{user.first_name|first}}</span>
+            {% endif %}
+            </div>
+
+            <span>Name: {{user_obj.last_name}} {{user_obj.first_name}}</span>
+
+            <span>gender: {{user.gender}}</span>
+
+            <span>birthday: {{user.birthday}}</span>
+
+            <span>bio: {{user.bio}}</span>
+        </div>
+       <a href="{% url 'users:profileupdate' %}">Edit Profile</a>
+        </div>
+    </div>
+{% endblock content %}

@@ -1,2 +1,1 @@
-# MYH_backend
-2021 MooYaHong Backend with DRF
+myh_back-end
