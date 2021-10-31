@@ -26,8 +26,6 @@ class Photo(models.Model):
     #updated = models.DateTimeField(auto_now=True)
     category = models.CharField(max_length=20, choices=club_category, default='일반')
     club_name = models.TextField(blank=True)
-    like = models.ManyToManyField(User, related_name='like_post', blank=True)
-    favorite = models.ManyToManyField(User, related_name='favorite_post', blank=True)
 
     def __str__(self):
         return "text : "+self.text
